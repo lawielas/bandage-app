@@ -5,8 +5,8 @@ import chart from '../assets/svg/uil_arrow-growth.svg'
 
 const Services = () => {
   return (
-    <section className="my-10 flex flex-col gap-40">
-        <div className="flex flex-col items-center gap-3">
+    <section className="my-10 flex flex-col gap-40 items-center">
+        <div className="flex flex-col items-center gap-3 w-80 md:w-96 text-center">
             <p className="font-semibold text-gray-600">Featured Products</p>
             <h3 className="text-2xl font-bold">THE BEST SERVICES</h3>
             <p className="text-sm font-semibold text-gray-500">Problems trying to resolve the conflict between</p>

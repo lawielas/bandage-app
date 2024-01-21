@@ -14,7 +14,7 @@ const Advice = () => {
             <h2 className='text-4xl'>Featured Post</h2>
         </div>
         <div className='flex flex-wrap justify-center gap-10'>
-            <div className='flex flex-col gap-3 w-96 shadow-lg p-5'>
+            <div className='flex flex-col gap-3 w-80 md:w-96 shadow-lg p-5'>
                 <div className='relative'>
                     <Image src={imageOne} alt='bedroom' />
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>
@@ -30,20 +30,20 @@ const Advice = () => {
                 </p>
                 <div className='flex gap-5 justify-between my-4'>
                     <div className='flex items-center gap-3'>
-                        <Image src={clock} alt='clock' className='w-6' />
-                        <p>22 April 2021</p>
+                        <Image src={clock} alt='clock' className='w-5' />
+                        <p className='text-sm'>22 April 2021</p>
                     </div>
                     <div className='flex items-center gap-3'>
-                        <Image src={chart} alt='chart' className='w-6'/>
-                        <p>10 comments</p>
+                        <Image src={chart} alt='chart' className='w-5'/>
+                        <p className='text-sm'>10 comments</p>
                     </div>
                 </div>
                 <div className='flex'>
                     <p>Learn More</p>
-                    <Image src={right} alt='right' className='w-6' />
+                    <Image src={right} alt='right' className='w-5' />
                 </div>
             </div>
-            <div className='flex flex-col gap-3 w-96 shadow-lg p-5'>
+            <div className='flex flex-col gap-3  w-80 md:w-96 shadow-lg p-5'>
                 <div className='relative'>
                     <Image src={imageTwo} alt='bedroom' />
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>
@@ -59,20 +59,20 @@ const Advice = () => {
                 </p>
                 <div className='flex gap-5 justify-between my-4'>
                     <div className='flex items-center gap-3'>
-                        <Image src={clock} alt='clock' className='w-6' />
-                        <p>22 April 2021</p>
+                        <Image src={clock} alt='clock' className='w-5' />
+                        <p className='text-sm'>22 April 2021</p>
                     </div>
                     <div className='flex items-center gap-3'>
-                        <Image src={chart} alt='chart' className='w-6'/>
-                        <p>10 comments</p>
+                        <Image src={chart} alt='chart' className='w-5'/>
+                        <p className='text-sm'>10 comments</p>
                     </div>
                 </div>
                 <div className='flex'>
                     <p>Learn More</p>
-                    <Image src={right} alt='right' className='w-6' />
+                    <Image src={right} alt='right' className='w-5' />
                 </div>
             </div>
-            <div className='flex flex-col gap-3 w-96 shadow-lg p-5'>
+            <div className='flex flex-col gap-3  w-80 md:w-96 shadow-lg p-5'>
                 <div className='relative'>
                     <Image src={imageThree} alt='bedroom' />
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>
@@ -88,17 +88,17 @@ const Advice = () => {
                 </p>
                 <div className='flex gap-5 justify-between my-4'>
                     <div className='flex items-center gap-3'>
-                        <Image src={clock} alt='clock' className='w-6' />
-                        <p>22 April 2021</p>
+                        <Image src={clock} alt='clock' className='w-5' />
+                        <p className='text-sm'>22 April 2021</p>
                     </div>
                     <div className='flex items-center gap-3'>
-                        <Image src={chart} alt='chart' className='w-6'/>
-                        <p>10 comments</p>
+                        <Image src={chart} alt='chart' className='w-5'/>
+                        <p className='text-sm'>10 comments</p>
                     </div>
                 </div>
                 <div className='flex'>
                     <p>Learn More</p>
-                    <Image src={right} alt='right' className='w-6' />
+                    <Image src={right} alt='right' className='w-5' />
                 </div>
             </div>
         </div>
