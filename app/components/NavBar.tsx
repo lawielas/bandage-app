@@ -24,7 +24,7 @@ const NavBar = () => {
 
   return (
     <div>
-        <section className='hidden md:flex bg-[#23856D] justify-between p-2 md:p-4 text-base text-white font-bold items-center'>
+        <section className='hidden md:flex bg-[#23856D] justify-between py-2 md:py-4 px-2 md:px-14 text-base text-white font-bold items-center'>
             <div className='flex gap-2 lg:gap-4'>
                 <div className='flex gap-2 items-center'>
                     <Image src={phone} alt='phone' className='w-4 lg:w-6' />
@@ -46,7 +46,7 @@ const NavBar = () => {
                 <Image src={twitter} alt='twitter' className='w-4 lg:w-6' />
             </div>
         </section>
-        <nav className='p-4 flex flex-col'>
+        <nav className='py-4 px-4 md:px-14 flex flex-col'>
             <div className=' flex justify-between items-center'>
                 <div className='flex gap-7 items-center'>
                     <h1 className='text-xl sm:2xl md:text-3xl lg:text-5xl font-extrabold text-[#252B42]'>Bandage</h1>
