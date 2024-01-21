@@ -56,7 +56,7 @@ const ProductDetails = ({params}:{
   return (
     <main>
         <NavBar />
-        <div className="flex gap-2 py-5 px-14 text-xl bg-gray-100 border-4 font-bold border-yellow-300">
+        <div className="flex gap-2 py-5 px-5 md:px-14 text-base md:text-xl bg-gray-100 border-4 font-bold border-yellow-300">
             <Link href='/' >Home</Link>
             <Image src={right} alt="right" className="w-6" />
             <p className="text-gray-500">Shop</p>
