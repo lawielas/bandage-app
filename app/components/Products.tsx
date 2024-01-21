@@ -1,9 +1,5 @@
-
-
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import Image from "next/image"
-// import useProducts from "../query/useProducts"
 import { useEffect, useState } from "react"
 import { LoadingComponent } from "../utils/LoadingComponent"
 
