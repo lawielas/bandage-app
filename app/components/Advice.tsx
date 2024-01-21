@@ -13,8 +13,8 @@ const Advice = () => {
             <p className='text-[#23A6F0] font-semibold'>Practice Advice</p>
             <h2 className='text-4xl'>Featured Post</h2>
         </div>
-        <div className='flex  justify-center gap-10'>
-            <div className='flex flex-col gap-3 w-96'>
+        <div className='flex flex-wrap justify-center gap-10'>
+            <div className='flex flex-col gap-3 w-96 shadow-lg p-5'>
                 <div className='relative'>
                     <Image src={imageOne} alt='bedroom' />
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>
@@ -43,7 +43,7 @@ const Advice = () => {
                     <Image src={right} alt='right' className='w-6' />
                 </div>
             </div>
-            <div className='flex flex-col gap-3 w-96'>
+            <div className='flex flex-col gap-3 w-96 shadow-lg p-5'>
                 <div className='relative'>
                     <Image src={imageTwo} alt='bedroom' />
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>
@@ -72,7 +72,7 @@ const Advice = () => {
                     <Image src={right} alt='right' className='w-6' />
                 </div>
             </div>
-            <div className='flex flex-col gap-3 w-96'>
+            <div className='flex flex-col gap-3 w-96 shadow-lg p-5'>
                 <div className='relative'>
                     <Image src={imageThree} alt='bedroom' />
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>

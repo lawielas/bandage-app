@@ -9,66 +9,86 @@ import profile from '../assets/svg/profile.svg'
 import search from '../assets/svg/search.svg'
 import cart from '../assets/svg/cart-shopping.svg'
 import heart from '../assets/svg/cart-shopping.svg'
+import menu from '../assets/svg/menu.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const NavBar = () => {
+
+    const [showMenu, setShowMenu] = useState(false)
+
+    const handleShowMenu = () => {
+        setShowMenu(!showMenu)
+    }
+
   return (
     <div>
-        <section className='flex bg-[#23856D] justify-between p-4 text-base text-white font-bold items-center'>
-            <div className='flex gap-4'>
+        <section className='hidden md:flex bg-[#23856D] justify-between p-2 md:p-4 text-base text-white font-bold items-center'>
+            <div className='flex gap-2 lg:gap-4'>
                 <div className='flex gap-2 items-center'>
-                    <Image src={phone} alt='phone' className='w-6' />
-                    <p>(225) 555-0118</p>
+                    <Image src={phone} alt='phone' className='w-4 lg:w-6' />
+                    <p className='text-xs lg:text-base'>(225) 555-0118</p>
                 </div>
                 <div className='flex gap-2 items-center'>
-                    <Image src={email} alt='email' className='w-7' />
-                    <p>michelle.rivera@example.com</p>
+                    <Image src={email} alt='email' className='w-5 lg:w-7' />
+                    <p className='text-xs lg:text-base'>michelle.rivera@example.com</p>
                 </div>
             </div>
-            <div>
+            <div className='text-xs lg:text-base'>
                 Follow Us and get a chance to win 80% off
             </div>
-            <div className='flex gap-3 items-center'>
-                <p>Follow Us : </p>
-                <Image src={instagram} alt='instagram' className='w-6' />
-                <Image src={youtube} alt='youtube' className='w-7' />
-                <Image src={facebook} alt='facebook' className='w-8' />
-                <Image src={twitter} alt='twitter' className='w-6' />
+            <div className='flex gap-2 lg:gap-3 items-center'>
+                <p className='text-xs lg:text-base'>Follow Us : </p>
+                <Image src={instagram} alt='instagram' className='w-4 lg:w-6' />
+                <Image src={youtube} alt='youtube' className='w-5 lg:w-7' />
+                <Image src={facebook} alt='facebook' className='w-6 lg:w-8' />
+                <Image src={twitter} alt='twitter' className='w-4 lg:w-6' />
             </div>
         </section>
-        <nav className='p-4 flex justify-between items-center'>
-            <div className='flex gap-6 items-center'>
-                <h1 className='text-5xl font-extrabold text-[#252B42]'>Bandage</h1>
-                <ul className='text-lg flex gap-7 font-bold text-[#737373] items-center'>
-                    <Link href="#">Home</Link>
-                    <Link href="#" className='flex gap-2 items-center text-[#252B42]'>
-                        <p>Shop</p>
-                        <Image src={down} alt='alt' className='w-6' />
-                    </Link>
-                    <Link href="#">About</Link>
-                    <Link href="#">Blog</Link>
-                    <Link href="#">Contact</Link>
-                    <Link href="#">Pages</Link>
-                </ul>
-            </div>
-            <div className='flex gap-6 text-lg text-[#23A6F0]'>
-                <div className='flex gap-2 items-center'>
-                    <Image src={profile} alt='profile' className='w-4' />
-                    <Link href="#" className='font-bold'>Login / Register</Link>
+        <nav className='p-4 flex flex-col'>
+            <div className=' flex justify-between items-center'>
+                <div className='flex gap-7 items-center'>
+                    <h1 className='text-xl sm:2xl md:text-3xl lg:text-5xl font-extrabold text-[#252B42]'>Bandage</h1>
+                    <div className='hidden md:text-lg md:flex gap-3 lg:gap-7 font-bold text-[#737373] items-center'>
+                        <Link href="#">Home</Link>
+                        <Link href="#" className='flex gap-2 items-center text-[#252B42]'>
+                            <p>Shop</p>
+                            <Image src={down} alt='alt' className='w-6' />
+                        </Link>
+                        <Link href="#">About</Link>
+                        <Link href="#">Blog</Link>
+                        <Link href="#">Contact</Link>
+                        <Link href="#">Pages</Link>
+                    </div>
                 </div>
-                <button className='flex'>
-                    <Image src={search} alt='Search' className='w-6' />
-                </button>
-                <button className='flex gap-1 items-center'>
-                    <Image src={cart} alt='cart' className='w-6' />
-                    <p>1</p>
-                </button>
-                <button className='flex gap-1 items-center'>
-                    <Image src={heart} alt='heart' className='w-6' />
-                    <p>2</p>
-                </button>
+                <div className='flex gap-3 lg:gap-6 text-sm lg:text-lg text-[#23A6F0] items-center'>
+                    <div className='hidden md:flex gap-2 items-center'>
+                        <Image src={profile} alt='profile' className='w-4' />
+                        <Link href="#" className='font-bold w-fit'>Login / Register</Link>
+                    </div>
+                    <button className='flex'>
+                        <Image src={search} alt='Search' className='w-5 lg:w-6' />
+                    </button>
+                    <button className='flex gap-1 items-center'>
+                        <Image src={cart} alt='cart' className='w-4 lg:w-6' />
+                        <p>1</p>
+                    </button>
+                    <button className='hidden md:flex gap-1 items-center'>
+                        <Image src={heart} alt='heart' className='w-5 lg:w-6' />
+                        <p>2</p>
+                    </button>
+                    <button onClick={handleShowMenu} className='md:hidden flex gap-1 items-center'>
+                        <Image src={menu} alt='menu' className='w-5' />
+                    </button>
+                </div>
             </div>
+            {showMenu && <div className='md:hidden flex flex-col text-lg  gap-7 font-bold text-[#737373] items-center my-10'>
+                <Link href="#">Home</Link>
+                <Link href="#" className='flex gap-2 items-center font-normal text-[#252B42]'>Product</Link>
+                <Link href="#">Pricing</Link>
+                <Link href="#">Contact</Link>
+            </div>}
         </nav>
     </div>
   )

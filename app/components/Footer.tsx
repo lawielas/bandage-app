@@ -6,16 +6,16 @@ import twitter from '../assets/svg/twitter.svg'
 const Footer = () => {
   return (
     <footer>
-        <div className='bg-gray-200 flex justify-between p-5 items-center shadow-xl'>
-            <h3 className='text-3xl font-bold'>Bandage</h3>
+        <div className='bg-gray-200 flex flex-col md:flex-row justify-between p-5 md:items-center shadow-xl gap-2'>
+            <h3 className='text-2xl md:text-3xl font-bold'>Bandage</h3>
             <div className='flex gap-6'>
-                <Image src={facebook} alt='facebook' className='w-12' />
-                <Image src={instagram} alt='instagram' className='w-9' />
-                <Image src={twitter} alt='twitter' className='w-8' />
+                <Image src={facebook} alt='facebook' className='w-8 md:w-12' />
+                <Image src={instagram} alt='instagram' className='w-6 md:w-9' />
+                <Image src={twitter} alt='twitter' className='w-6 md:w-8' />
             </div>
         </div>
         <div>
-            <div className='flex justify-center gap-10 my-24'>
+            <div className='flex flex-col md:flex-row justify-center gap-10 my-24 px-10 md:px-0'>
                 <div className='font-semibold text-gray-500 flex flex-col gap-3'>
                     <h1 className='text-black font-bold'>Company Info</h1>
                     <p>About Us</p>
@@ -54,8 +54,8 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className='bg-gray-200 text-gray-600 p-9 font-semibold'>
-            <p>Made With Love By Finland All Rights Reserved</p>
+        <div className='bg-gray-200 text-gray-600 p-9 font-semibold flex justify-center md:justify-start'>
+            <p className='w-64 md:w-fit text-center'>Made With Love By Finland All Rights Reserved</p>
         </div>
     </footer>
   )

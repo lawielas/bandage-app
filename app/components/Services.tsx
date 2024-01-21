@@ -11,7 +11,7 @@ const Services = () => {
             <h3 className="text-2xl font-bold">THE BEST SERVICES</h3>
             <p className="text-sm font-semibold text-gray-500">Problems trying to resolve the conflict between</p>
         </div>
-        <div className="flex justify-center gap-20">
+        <div className="flex flex-wrap justify-center gap-20">
             <div className="w-64 flex items-center flex-col gap-4">
                 <Image src={book} alt="Easy wins" />
                 <h1 className="text-2xl font-bold">Easy Wins</h1>
