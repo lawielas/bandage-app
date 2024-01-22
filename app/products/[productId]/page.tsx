@@ -5,13 +5,16 @@ import { SingleProduct } from "@/app/types/ProductType"
 import axios from "axios"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
+import {motion} from 'framer-motion'
 import right from '../../assets/svg/right-chevron.svg'
-import left from '../../assets/svg/right-chevron.svg'
+import left from '../../assets/svg/left-chevron-black.svg'
 import starFilled from '../../assets/svg/star-filled.svg'
 import starEmpty from '../../assets/svg/star-empty.svg'
-import cart from '../../assets/svg/cart-shopping.svg'
-import visible from '../../assets/svg/cart-shopping.svg'
-import heart from '../../assets/svg/cart-shopping.svg'
+import cart from '../../assets/svg/cart-shopping-black.svg'
+import visible from '../../assets/svg/visible.svg'
+import heart from '../../assets/svg/heart-black.svg'
 import brandOne from '../../assets/img/fa-brands-1.png'
 import brandTwo from '../../assets/img/fa-brands-2.png'
 import brandThree from '../../assets/img/fa-brands-3.png'
@@ -76,7 +79,8 @@ const ProductDetails = ({params}:{
     }
 
   return (
-    <main className="font-montserrat relative flex justify-center">
+    <main className="font-montserrat relative flex md:justify-center">
+        <ToastContainer />
         <div className={showCart || showFavorite ? "opacity-10" : "w-full"}>
             <NavBar />
             <div className="flex gap-2 py-5 px-14 text-xl bg-gray-100 border-4 font-bold border-yellow-300">
@@ -87,7 +91,7 @@ const ProductDetails = ({params}:{
             <section>
                 {loading && <div className="p-10 text-lg md:text-2xl text-center">Loading...</div>}
                 {product && 
-                <div className="my-10">
+                <div className="py-10 bg-gray-50">
                     <div className="flex flex-col items-center md:flex-row justify-center gap-20">
                         <div className=" w-11/12 md:w-[400px] relative h-[400px] overflow-hidden">
                             <Image src={images[currentImageIndex]} width={250} height={250} alt="product image" className="w-96 object-cover" />
@@ -116,8 +120,9 @@ const ProductDetails = ({params}:{
                                 <div className="flex gap-5 items-center">
                                     <p className="text-gray-400 font-semibold text-base">${product.price}</p>
                                     <p className="text-[#23856D] font-bold text-2xl">${(product.price - (product.price * (product.discountPercentage / 100))).toFixed(2)}</p>
+                                    <div className="font-semibold">{product.stock} <span className="text-[#23856D]">available</span></div>
                                 </div>
-                                <div className="font-semibold">{product.stock} <span className="text-[#23856D]">available</span></div>
+                                <p className="flex md:hidden text-sm text-gray-500 py-6">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
                             </div>
                             <div className="border-t-2 pt-10 flex flex-col gap-10">
                                 <div className="flex gap-4">
@@ -126,21 +131,30 @@ const ProductDetails = ({params}:{
                                     <div className="bg-red-500 w-8 h-8 rounded-full"></div>
                                     <div className="bg-yellow-500 w-8 h-8 rounded-full"></div>
                                 </div>
-                                <div className="flex gap-2">
+                                <div className="flex gap-5">
                                     <button className="bg-[#23A6F0] p-3 rounded-xl text-white font-semibold">Select Options</button>
                                     <div className="flex gap-4">
                                         <button onClick={() => {
                                             addTotalPrice(product.price, product.discountPercentage);
-                                            addItemToCart(product.id, product.title, product.brand, product.price, product.discountPercentage, product.thumbnail)}} 
+                                            addItemToCart(product.id, product.title, product.brand, product.price, product.discountPercentage, product.thumbnail)
+                                            }} 
+                                            className="w-10 h-10 bg-white rounded-full flex items-center justify-center"
                                             disabled={cartItems.length > 0 && cartItems.some(item => item.id === product.id)}>
                                             <Image src={cart} alt="cart" className="w-6" />
                                         </button>
                                         <button onClick={() => {
-                                            addItemToFavorite(product.id, product.title, product.brand, product.thumbnail)}} 
+                                            addItemToFavorite(product.id, product.title, product.brand, product.thumbnail)
+                                            toast.success("Product added to favorites!", {
+                                                position: "bottom-right"
+                                            })
+                                        }} 
+                                            className="w-10 h-10 bg-white rounded-full flex items-center justify-center"
                                             disabled={favoriteItems.length > 0 && favoriteItems.some(item => item.id === product.id)}>
-                                            <Image src={cart} alt="favorite" className="w-6" />
+                                            <Image src={heart} alt="favorite" className="w-6" />
                                         </button>
-                                        <Image src={visible} alt="favorite" className="w-6" />
+                                        <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                                            <Image src={visible} alt="visible" className="w-6" />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -189,12 +203,20 @@ const ProductDetails = ({params}:{
                 <Footer />
             </div>
         </div>
-        <div className={showCart ? "absolute top-20" : "hidden"}>
+        {showCart && <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }} className={"absolute top-20"}>
             {isClient && <CartComponent />}
-        </div>
-        <div className={showFavorite ? "absolute top-20" : "hidden"}>
+        </motion.div>}
+        {showFavorite && <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }} className={"absolute top-20"}>
             {isClient && <FavoriteComponent />}
-        </div>
+        </motion.div>}
     </main>
   )
 }

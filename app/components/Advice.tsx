@@ -1,9 +1,9 @@
 import imageOne from '../assets/img/unsplash_hHdHCfAifHU.png'
 import imageTwo from '../assets/img/unsplash_tVEqStC2uz8.png'
 import imageThree from '../assets/img/unsplash_dEGu-oCuB1Y.png'
-import clock from '../assets/svg/clock-check.svg'
-import right from '../assets/svg/right-chevron.svg'
-import chart from '../assets/svg/chart-line.svg'
+import clock from '../assets/svg/clock-check-blue.svg'
+import right from '../assets/svg/right-chevron-blue.svg'
+import chart from '../assets/svg/chart-line-green.svg'
 import Image from 'next/image'
 
 const Advice = () => {

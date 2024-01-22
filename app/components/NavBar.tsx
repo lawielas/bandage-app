@@ -8,7 +8,7 @@ import down from '../assets/svg/down-chevron.svg'
 import profile from '../assets/svg/profile.svg'
 import search from '../assets/svg/search.svg'
 import cart from '../assets/svg/cart-shopping.svg'
-import heart from '../assets/svg/cart-shopping.svg'
+import heart from '../assets/svg/heart-blue.svg'
 import menu from '../assets/svg/menu.svg'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -85,7 +85,7 @@ const NavBar = () => {
                         <Image src={cart} alt='cart' className='w-4 lg:w-6' />
                         {isClient ? <p>{cartItems.length}</p> : <p>0</p>}
                     </button>
-                    <button onClick={() => showFavoriteToggle(true)} className='hidden md:flex gap-1 items-center'>
+                    <button onClick={() => showFavoriteToggle(true)} className='flex gap-1 items-center'>
                         <Image src={heart} alt='heart' className='w-5 lg:w-6' />
                         {isClient ? <p>{favoriteItems.length}</p> : <p>0</p>}
                     </button>

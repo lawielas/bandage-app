@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import facebook from '../assets/svg/facebook.svg'
-import instagram from '../assets/svg/instagram.svg'
-import twitter from '../assets/svg/twitter.svg'
+import facebook from '../assets/svg/facebook-blue.svg'
+import instagram from '../assets/svg/instagram-blue.svg'
+import twitter from '../assets/svg/twitter-blue.svg'
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='bg-gray-200 flex flex-col md:flex-row justify-between p-5 md:items-center shadow-xl gap-2'>
             <h3 className='text-2xl md:text-3xl font-bold'>Bandage</h3>
             <div className='flex gap-6'>
-                <Image src={facebook} alt='facebook' className='w-8 md:w-12' />
+                <Image src={facebook} alt='facebook' className='w-6 md:w-9' />
                 <Image src={instagram} alt='instagram' className='w-6 md:w-9' />
                 <Image src={twitter} alt='twitter' className='w-6 md:w-8' />
             </div>
