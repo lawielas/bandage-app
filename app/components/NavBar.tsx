@@ -12,9 +12,20 @@ import heart from '../assets/svg/cart-shopping.svg'
 import menu from '../assets/svg/menu.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useCartStore } from '../store/cartStore'
+import { useFavoriteStore } from '../store/FavoriteStore'
 
 const NavBar = () => {
+
+    const [isClient, setIsClient] = useState(false)
+
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
+
+    const { showCartToggle, cartItems} = useCartStore()
+    const { showFavoriteToggle, favoriteItems} = useFavoriteStore()
 
     const [showMenu, setShowMenu] = useState(false)
 
@@ -70,13 +81,13 @@ const NavBar = () => {
                     <button className='flex'>
                         <Image src={search} alt='Search' className='w-5 lg:w-6' />
                     </button>
-                    <button className='flex gap-1 items-center'>
+                    <button onClick={() => showCartToggle(true)} className='flex gap-1 items-center'>
                         <Image src={cart} alt='cart' className='w-4 lg:w-6' />
-                        <p>1</p>
+                        {isClient ? <p>{cartItems.length}</p> : <p>0</p>}
                     </button>
-                    <button className='hidden md:flex gap-1 items-center'>
+                    <button onClick={() => showFavoriteToggle(true)} className='hidden md:flex gap-1 items-center'>
                         <Image src={heart} alt='heart' className='w-5 lg:w-6' />
-                        <p>2</p>
+                        {isClient ? <p>{favoriteItems.length}</p> : <p>0</p>}
                     </button>
                     <button onClick={handleShowMenu} className='md:hidden flex gap-1 items-center'>
                         <Image src={menu} alt='menu' className='w-5' />

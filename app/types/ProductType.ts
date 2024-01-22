@@ -22,3 +22,20 @@ export interface SingleProduct {
   thumbnail: string,
   images: string[]
 }
+
+export interface CartProduct {
+  id: number,
+  brand: string,
+  title: string,
+  price: number,
+  discountPercentage: number,
+  thumbnail: string,
+  quantity: number
+}
+
+export interface FavoriteProduct {
+  id: number,
+  brand: string,
+  title: string,
+  thumbnail: string
+}

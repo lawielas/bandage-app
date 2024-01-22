@@ -67,7 +67,7 @@ const Products = () => {
           })}
         </div>
         <div className="flex justify-center">
-            <button onClick={handleLoadMore} className="text-[#23A6F0] border-2 border-[#23A6F0] py-4 px-6 font-bold w-60" disabled={loading}>
+            <button onClick={handleLoadMore} className="text-[#23A6F0] border-2 border-[#23A6F0] py-4 px-6 font-bold w-60" disabled={loading || products.length===100}>
               {loading ? <LoadingComponent /> : <span>Load more products</span>}
             </button>
         </div>
