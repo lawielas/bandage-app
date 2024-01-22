@@ -137,6 +137,9 @@ const ProductDetails = ({params}:{
                                         <button onClick={() => {
                                             addTotalPrice(product.price, product.discountPercentage);
                                             addItemToCart(product.id, product.title, product.brand, product.price, product.discountPercentage, product.thumbnail)
+                                            toast.success("Product added to cart!", {
+                                                position: "bottom-right"
+                                            })
                                             }} 
                                             className="w-10 h-10 bg-white rounded-full flex items-center justify-center"
                                             disabled={cartItems.length > 0 && cartItems.some(item => item.id === product.id)}>
