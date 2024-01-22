@@ -48,9 +48,9 @@ const BestSeller = () => {
                 <p className="text-gray-500 font-semibold text-sm">{product.category}</p>
                 <div className="flex gap-5 items-center">
                   <p className="text-gray-400 font-semibold text-sm">${product.price}</p>
-                  <p className="text-[#23856D] font-semibold">${(product.price - (product.price * (product.discountPercentage / 100))).toFixed(2)}</p>
+                  <p className="text-secondaryColor font-semibold">${(product.price - (product.price * (product.discountPercentage / 100))).toFixed(2)}</p>
                 </div>
-                <Link className="bg-[#23A6F0] p-3 font-semibold text-white rounded-xl" href={`/products/${product.id}`}>View Details</Link>
+                <Link className="bg-primaryColor p-3 font-semibold text-white rounded-xl" href={`/products/${product.id}`}>View Details</Link>
               </div>
               
             </div>

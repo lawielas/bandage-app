@@ -10,6 +10,11 @@ const config: Config = {
     extend: {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif']
+      },
+      colors: {
+        primaryColor: '#23A6F0',
+        secondaryColor: '#23856D',
+        tertiaryColor: '#2DC071'
       }
     },
   },

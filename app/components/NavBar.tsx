@@ -35,7 +35,7 @@ const NavBar = () => {
 
   return (
     <div>
-        <section className='hidden md:flex bg-[#23856D] justify-between py-2 md:py-4 px-2 md:px-14 text-base text-white font-bold items-center'>
+        <section className='hidden md:flex bg-secondaryColor justify-between py-2 md:py-4 px-2 md:px-14 text-base text-white font-bold items-center'>
             <div className='flex gap-2 lg:gap-4'>
                 <div className='flex gap-2 items-center'>
                     <Image src={phone} alt='phone' className='w-4 lg:w-6' />
@@ -73,7 +73,7 @@ const NavBar = () => {
                         <Link href="#">Pages</Link>
                     </div>
                 </div>
-                <div className='flex gap-3 lg:gap-6 text-sm lg:text-lg text-[#23A6F0] items-center'>
+                <div className='flex gap-3 lg:gap-6 text-sm lg:text-lg text-primaryColor items-center'>
                     <div className='hidden md:flex gap-2 items-center'>
                         <Image src={profile} alt='profile' className='w-4' />
                         <Link href="#" className='font-bold w-fit'>Login / Register</Link>

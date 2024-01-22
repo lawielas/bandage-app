@@ -18,7 +18,7 @@ const CartComponent = () => {
             </div>
             <div className="flex gap-3 items-center">
                 <p className="text-gray-500 text-sm md:text-base">total</p>
-                <p className="text-lg md:text-xl font-bold text-[#23856D]">$ {cartItems.length === 0 ? 0 : totalPrice}</p>
+                <p className="text-lg md:text-xl font-bold text-secondaryColor">$ {cartItems.length === 0 ? 0 : totalPrice}</p>
                 <button onClick={() => showCartToggle(false)}><Image src={close} alt="close" className="w-7 md:w-10" /></button>
             </div>
         </header>
@@ -52,7 +52,7 @@ const CartComponent = () => {
                 </div>
             ))}
             {cartItems.length > 0 && <div className="flex justify-end ">
-                <button className="bg-[#23A6F0] p-2 md:p-4 text-white rounded-lg lext-base md:text-lg font-semibold">Checkout</button>
+                <button className="bg-primaryColor p-2 md:p-4 text-white rounded-lg lext-base md:text-lg font-semibold">Checkout</button>
             </div>}
         </div>
     </section>

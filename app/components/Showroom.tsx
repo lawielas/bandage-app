@@ -10,7 +10,7 @@ const Showroom = () => {
         <div className='relative w-11/12 md:w-fit h-96 sm:h-fit overflow-hidden'>
             <Image src={imageOne} alt='Plates' className='object-cover h-96 sm:h-fit'/>
             <div className='absolute top-7 left-7 flex flex-col gap-3'>
-                <p className='text-[#2DC071] text-sm font-bold'>5 Items</p>
+                <p className='text-tertiaryColor text-sm font-bold'>5 Items</p>
                 <h2 className='font-bold text-4xl'>FURNITURE</h2>
                 <p className='font-bold text-sm'>Read More</p>
             </div>
@@ -19,7 +19,7 @@ const Showroom = () => {
             <div className='relative h-96 sm:h-fit  overflow-hidden border-2'>
                 <Image src={imageTwo} alt='Basket vase' className='object-cover h-96 sm:h-fit' />
                 <div className='absolute top-7 left-7 flex flex-col gap-3'>
-                    <p className='text-[#2DC071] text-sm font-bold'>5 Items</p>
+                    <p className='text-tertiaryColor text-sm font-bold'>5 Items</p>
                     <h2 className='font-bold text-3xl'>FURNITURE</h2>
                     <p className='font-bold text-sm'>Read More</p>
                 </div>
@@ -28,7 +28,7 @@ const Showroom = () => {
                 <div className='relative h-96 sm:h-fit  overflow-hidden'>
                     <Image src={imageThree} alt='lamp' className='w-full object-cover h-96 sm:h-fit'/>
                     <div className='absolute top-7 left-7 flex flex-col gap-3'>
-                        <p className='text-[#2DC071] text-sm font-bold'>5 Items</p>
+                        <p className='text-tertiaryColor text-sm font-bold'>5 Items</p>
                         <h2 className='font-bold text-3xl'>FURNITURE</h2>
                         <p className='font-bold text-sm'>Read More</p>
                     </div>
@@ -36,7 +36,7 @@ const Showroom = () => {
                 <div className='relative h-96 sm:h-fit overflow-hidden '>
                     <Image src={imageFour} alt='vases'  className='w-full object-cover h-96 sm:h-fit'/>
                     <div className='absolute top-7 left-7 flex flex-col gap-3'>
-                        <p className='text-[#2DC071] text-sm font-bold'>5 Items</p>
+                        <p className='text-tertiaryColor text-sm font-bold'>5 Items</p>
                         <h2 className='font-bold text-3xl'>FURNITURE</h2>
                         <p className='font-bold text-sm'>Read More</p>
                     </div>

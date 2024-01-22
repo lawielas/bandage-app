@@ -119,8 +119,8 @@ const ProductDetails = ({params}:{
                                 </div>
                                 <div className="flex gap-5 items-center">
                                     <p className="text-gray-400 font-semibold text-base">${product.price}</p>
-                                    <p className="text-[#23856D] font-bold text-2xl">${(product.price - (product.price * (product.discountPercentage / 100))).toFixed(2)}</p>
-                                    <div className="font-semibold">{product.stock} <span className="text-[#23856D]">available</span></div>
+                                    <p className="text-secondaryColor font-bold text-2xl">${(product.price - (product.price * (product.discountPercentage / 100))).toFixed(2)}</p>
+                                    <div className="font-semibold">{product.stock} <span className="text-secondaryColor">available</span></div>
                                 </div>
                                 <p className="flex md:hidden text-sm text-gray-500 py-6">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
                             </div>
@@ -132,7 +132,7 @@ const ProductDetails = ({params}:{
                                     <div className="bg-yellow-500 w-8 h-8 rounded-full"></div>
                                 </div>
                                 <div className="flex gap-5">
-                                    <button className="bg-[#23A6F0] p-3 rounded-xl text-white font-semibold">Select Options</button>
+                                    <button className="bg-primaryColor p-3 rounded-xl text-white font-semibold">Select Options</button>
                                     <div className="flex gap-4">
                                         <button onClick={() => {
                                             addTotalPrice(product.price, product.discountPercentage);
@@ -178,7 +178,7 @@ const ProductDetails = ({params}:{
                             <div className="w-[500px] flex flex-col gap-10">
                                 <h1 className="text-2xl font-bold">{product.title}</h1>
                                 <p>Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
-                                <p className="pl-10 border-l-4 border-l-[#23856D]">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
+                                <p className="pl-10 border-l-4 border-l-secondaryColor">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
                                 <p>Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
                             </div>
                             <div className="w-96 border-2">

@@ -28,7 +28,7 @@ const About = () => {
                 </div>
                 <p className='text-sm w-80 sm:text-base text-center text-gray-500 font-semibold'>Slate helps you see how many more days you need to work to reach your financial goal.</p>
                 <div className='flex flex-col gap-2 items-center font-bold'>
-                    <h4 className='text-[#23A6F0]'>Regina Miles</h4>
+                    <h4 className='text-primaryColor'>Regina Miles</h4>
                     <h4>Designer</h4>
                 </div>
             </div>

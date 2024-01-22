@@ -10,7 +10,7 @@ const Advice = () => {
   return (
     <section className='flex flex-col items-center my-32 gap-10'>
         <div className='flex flex-col items-center gap-4'>
-            <p className='text-[#23A6F0] font-semibold'>Practice Advice</p>
+            <p className='text-primaryColor font-semibold'>Practice Advice</p>
             <h2 className='text-4xl'>Featured Post</h2>
         </div>
         <div className='flex flex-wrap justify-center gap-10'>
@@ -20,7 +20,7 @@ const Advice = () => {
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>
                 </div>
                 <div className='flex gap-8 text-sm text-gray-500'>
-                    <p className='text-[#23A6F0]'>Google</p>
+                    <p className='text-primaryColor'>Google</p>
                     <p>Trending</p>
                     <p>New</p>
                 </div>
@@ -49,7 +49,7 @@ const Advice = () => {
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>
                 </div>
                 <div className='flex gap-8 text-sm text-gray-500'>
-                    <p className='text-[#23A6F0]'>Google</p>
+                    <p className='text-primaryColor'>Google</p>
                     <p>Trending</p>
                     <p>New</p>
                 </div>
@@ -78,7 +78,7 @@ const Advice = () => {
                     <p className='absolute top-5 left-5 bg-red-500 text-white p-1 font-semibold'>NEW</p>
                 </div>
                 <div className='flex gap-8 text-sm text-gray-500'>
-                    <p className='text-[#23A6F0]'>Google</p>
+                    <p className='text-primaryColor'>Google</p>
                     <p>Trending</p>
                     <p>New</p>
                 </div>
