@@ -10,7 +10,7 @@ const CartComponent = () => {
     const { cartItems, addPriceQuantity, reducePriceQuantity, addProductQuantity, reduceProductQuantity, removeItemFromCart, addTotalPrice, showCartToggle, totalPrice, reduceTotalPrice } = useCartStore()   
 
   return (
-    <section className="bg-white min-w-[450px] md:min-w-[750px] min-h-[400px] p-5 md:p-7 z-50 shadow-xl">
+    <section className="bg-white min-w-[300px] md:min-w-[750px] min-h-[400px] p-5 md:p-7 z-50 shadow-xl">
         <header className="flex justify-between py-5">
             <div className="flex gap-3 items-center">
                 <h1 className=" text-xl md:text-2xl font-bold">Your Cart</h1>
