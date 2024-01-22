@@ -16,7 +16,7 @@ const About = () => {
   return (
     <section className='flex flex-wrap justify-center gap-20 my-32'>
         <div className='w-[500px] flex flex-col items-center gap-16'>
-            <h1 className='text-3xl font-bold'>What they say about us</h1>
+            <h1 className='text-3xl font-bold text-center'>What they say about us</h1>
             <div className=' flex flex-col items-center gap-6'>
                 <Image src={user} alt='user' />
                 <div className='flex gap-2'>
