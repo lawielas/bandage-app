@@ -79,7 +79,7 @@ const ProductDetails = ({params}:{
     }
 
   return (
-    <main className="font-montserrat relative flex md:justify-center">
+    <main className="font-montserrat relative flex justify-center">
         <ToastContainer />
         <div className={showCart || showFavorite ? "opacity-10" : "w-full"}>
             <NavBar />
