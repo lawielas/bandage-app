@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import { persist } from "zustand/middleware"
+import { persist, createJSONStorage } from "zustand/middleware"
 import { CartProduct } from "../types/ProductType"
 
 
@@ -14,6 +14,7 @@ type Cart = {
     totalPrice: number
     addTotalPrice: (price: number, discountPercentage: number) => void
     reduceTotalPrice: (id: number, price: number, discountPercentage: number) => void
+    deleteTotalPrice: (id: number, quantity: number, price: number, discountPercentage: number) => void
     addPriceQuantity: (id:number,  price: number, discountPercentage: number) => void
     reducePriceQuantity: (id:number,  price: number, discountPercentage: number) => void
 }
@@ -58,28 +59,33 @@ export const useCartStore = create(persist<Cart>((set) => ({
     totalPrice: 0,
     addTotalPrice: (price: number, discountPercentage: number) => {
         set((state) => ({
-            totalPrice: state.totalPrice + parseInt((price - (price * (discountPercentage / 100))).toFixed(2))
+            totalPrice: state.totalPrice + parseFloat((price - (price * (discountPercentage / 100))).toFixed(2))
         }))
     },
     reduceTotalPrice: (id: number, price: number, discountPercentage: number) => {
         set((state) => ({
-            totalPrice: state.totalPrice - (state.cartItems.filter(item => item.id === id) && parseInt((price - (price * (discountPercentage / 100))).toFixed(2)))
+            totalPrice: state.totalPrice - (state.cartItems.filter(item => item.id === id) && parseFloat((price - (price * (discountPercentage / 100))).toFixed(2)))
+        }))
+    },
+    deleteTotalPrice: (id: number, quantity: number, price: number, discountPercentage: number) => {
+        set((state) => ({
+            totalPrice: state.totalPrice - (state.cartItems.filter(item => item.id === id) && quantity * parseFloat((price - (price * (discountPercentage / 100))).toFixed(2)))
         }))
     },
     addPriceQuantity: (id:number, price: number, discountPercentage: number) => {
         set((state) => ({
-            totalPrice: state.totalPrice + (state.cartItems.filter(item => item.id === id) && parseInt((price - (price * (discountPercentage / 100))).toFixed(2)))
+            totalPrice: state.totalPrice + (state.cartItems.filter(item => item.id === id) && parseFloat((price - (price * (discountPercentage / 100))).toFixed(2)))
         }))
     },
     reducePriceQuantity: (id:number, price: number, discountPercentage: number) => {
         set((state) => ({
-            totalPrice: state.totalPrice - (state.cartItems.filter(item => item.id === id) && parseInt((price - (price * (discountPercentage / 100))).toFixed(2)))
+            totalPrice: state.totalPrice - (state.cartItems.filter(item => item.id === id) && parseFloat((price - (price * (discountPercentage / 100))).toFixed(2)))
         }))
     }
 }),
     {
         name: 'cart',
-        getStorage: () => localStorage
+        storage: createJSONStorage(() => localStorage)
     }
 
 ))

@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import { persist } from "zustand/middleware"
+import { persist, createJSONStorage } from "zustand/middleware"
 import { FavoriteProduct } from "../types/ProductType"
 
 
@@ -38,7 +38,7 @@ export const useFavoriteStore = create(persist<Favorite>((set) => ({
 }),
     {
         name: 'favorite',
-        getStorage: () => localStorage
+        storage: createJSONStorage(() => localStorage)
 
     }
 ))

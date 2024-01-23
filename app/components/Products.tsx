@@ -50,7 +50,7 @@ const Products = () => {
           {products?.map((product) => {
             return <div key={product.id} className="flex flex-col gap-6 items-center justify-between py-8 shadow-xl">
               <div className="h-[250px] overflow-hidden">
-                <Image src={product.thumbnail} width={250} height={250} alt={product.description}/>
+                <Image src={product.thumbnail} width={250} height={250} alt='product image'/>
               </div>
               <div className="flex flex-col gap-3 items-center">
                 <p className="text-gray-500 font-semibold text-xs">{product.brand}</p>
